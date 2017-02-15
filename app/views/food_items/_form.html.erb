@@ -26,9 +26,9 @@
     <%= f.text_field :price %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :section_id %>
-    <%= f.text_field :section_id %>
+    <%= f.select :section_id, Section.all.map{|a| [a.name, a.id]}, {}, class: 'form-control' %>
   </div>
 
   <div class="field">
