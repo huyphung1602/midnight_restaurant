@@ -2,6 +2,8 @@
 
 one:
   food_item: one
+  quantity: 1
 
 two:
   food_item: two
+  quantity: 1
