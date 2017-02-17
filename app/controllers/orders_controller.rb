@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @item = FoodItem.find(params[:food_item_id])
   end
 
   def new
@@ -24,7 +25,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to food_item_orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

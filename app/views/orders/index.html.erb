@@ -13,11 +13,13 @@
 
   <tbody>
     <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.food_item_id %></td>
-        <td><%= order.quantity %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if order.food_item_id == @item.id %>
+        <tr>
+          <td><%= order.food_item_id %></td>
+          <td><%= order.quantity %></td>
+          <td><%= link_to 'Destroy', "/food_items/#{order.food_item_id}/orders/#{order.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
