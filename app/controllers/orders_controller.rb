@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+  def all
+    @orders = Order.all
+  end
+
   def index
     @orders = Order.all
     @item = FoodItem.find(params[:food_item_id])
@@ -16,7 +20,7 @@ class OrdersController < ApplicationController
     @order = @item.orders.build order_params
 
     if @order.save
-      redirect_to menu_path, flash: {success: "Thank you for your order!"}
+      redirect_to "/food_items/#{@order.food_item_id}/orders/#{@order.id}", flash: {success: "Thank you for your order!"}
     else
       render 'new'
     end
@@ -30,11 +34,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   private
     def set_order
       @order = Order.find(params[:id])
     end
     def order_params
-      params.require(:order).permit(:quantity)
+      params.require(:order).permit(:name, :phone, :address, :quantity)
     end
 end

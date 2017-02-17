@@ -8,5 +8,7 @@ Rails.application.routes.draw do
  
   get 'about_us' => 'home#about_us'
 
+  get 'all_orders' => 'orders#all'
+
   root "home#index"
 end

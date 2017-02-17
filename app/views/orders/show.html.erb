@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Thank you for your order</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food name</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @order.food_item.name %></td>
+      <td><%= @order.name %></td>
+      <td><%= @order.phone %></td>
+      <td><%= @order.address %></td>
+      <td><%= @order.quantity %></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,4 +1,5 @@
 <h1>Menu</h1>
+<br>
 
 <div class="btn-group">
   <% @sections.each do |section| %>
@@ -12,30 +13,23 @@
       <%= submit_tag "Sort" %>
     </div>
   <% end %>
-</div>
-
+</div><br><br>
 
 <% if @current_section %>
-  <table class="table">
-    <div class="thead">
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Image</th>
-        <th>Order</th>
-      </tr>
+<div class="row">
+  <% @food_items.each do |item| %>
+    <div class="col-sm-3" style="max-height: 80rem;">
+      <img class="card-img-top img-fluid rounded" style="max-height: 40rem;" src= <%= item.image_url_or_default %> alt="Food image">
+      <div class="card-block">
+        <h4 class="card-title" ><%=  item.name %></h4>
+        <p class="card-text limittext" style="height: 3rem;"><%= item.description %></p>
+        <h3 class="card-title" style="color: rgb(176,43,44);"><%=  number_to_currency(item.price, locale: :vn) %> </h3>
+        <p><%= link_to "Add to order", new_food_item_order_path(food_item_id: item.id), class: "btn btn-primary" %></p>
+      </div>
     </div>
-    <div class="tbody">
-      <% @food_items.each do |item| %>
-        <tr>
-          <td><%= item.name %></td>
-          <td><%= number_to_currency(item.price, locale: :vn) %></td>
-          <td><%= image_tag(item.image_url_or_default, size: "180x150", alt: "#{item.name}") %></td>
-          <td><%= link_to "Add to order", new_food_item_order_path(food_item_id: item.id) %></td>
-        </tr>
-      <% end %>
-    </div>
-  </table>
+  <% end %>
+</div>
+
 <% else %>
   <div class="alert alert-info">Please select a section</div>
 <% end %>

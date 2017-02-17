@@ -1,6 +1,46 @@
-<h1>Welcome to Midnight Restaurant</h1>
-
 <div class="jumbotron">
-  <%= link_to "Menu", menu_path, class: 'btn btn-secondary' %>
-  <%= link_to "About us", about_us_path, class: 'btn btn-secondary' %>
+  <h1 style="color: white; text-align: center; opacity: 0.9;"><span class="badge badge-primary">Welcome to Midnight Restaurant</span></h1><br>
+  
+  <div style="text-align:center; opacity: 0.9;">
+    <%= link_to "Menu", menu_path, class: 'btn btn-primary' %>
+    <%= link_to "About us", about_us_path, class: 'btn btn-primary' %>
+  </div>
 </div>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid rounded" src="http://bunviet.ani.com.vn/wp-content/uploads/2016/06/bun-thit-nuong.jpg" style="width:1200px;height:800px;" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid rounded" src="http://media.tinmoi.vn/2015/05/25/cach-lam-banh-xeo-mien-bac.jpg" style="width:1200px;height:800px;" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid rounded" src="http://thongtinhanquoc.com/wp-content/uploads/2015/05/tthq-quan-an-viet-nam.jpg" style="width:1200px;height:800px;" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid rounded" src="http://beptruong.edu.vn/wp-content/uploads/2015/03/com-tam-suon-bi-cha.jpg" style="width:1200px;height:800px;" alt="Fourh slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid rounded" src="http://chinaonefontana.yolasite.com/resources/cm.JPG" style="width:1200px;height:800px;" alt="Fifth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<br>
+<br>
