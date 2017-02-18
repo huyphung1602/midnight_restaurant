@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
+<h1>Detail Product</h1><br>
 
-<p>
-  <strong>Name:</strong>
-  <%= @food_item.name %>
-</p>
+<div class="card card-outline-warning">
+  <div class="card-block">
+    <div class="row">
 
-<p>
-  <strong>Description:</strong>
-  <%= @food_item.description %>
-</p>
+      <div class="col-sm-5" style="max-height: 80rem;">
+        <img class="img-fluid rounded" style="max-height: 40rem;" src= <%= @food_item.image_url_or_default %> alt="Food image"><br><br>
+        <%= link_to "Add to order", new_food_item_order_path(@food_item.id), class: "btn btn-primary" %>
+        <%= link_to 'Back', menu_path, class: "btn btn-danger"%>
+      </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @food_item.price %>
-</p>
+      <div class="col-sm-7" style="max-height: 120rem;">
+        <h2><%= @food_item.name %></h2><br>
+        <p style="height: 8rem;" align="justify"><font size="4"><%= @food_item.description %></font></p>
+        <p style="color: rgb(176,43,44);"><strong><font size="5"><%= number_to_currency(@food_item.price, locale: :vn) %></font></strong></p>
+        <p style="color: rgb(255,140,0);"><font size="4"><%= @food_item.section %>, <%= @food_item.cuisine %></font></p>
+      </div>
 
-<p>
-  <strong>Section:</strong>
-  <%= @food_item.section %>
-</p>
+    </div>
+  </div>
+</div>
+<br><br>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @food_item.image_url %>
-</p>
-
-<%= link_to 'Edit', edit_food_item_path(@food_item) %> |
-<%= link_to 'Back', food_items_path %>
+<h1>Related Product</h1><br>
+<div class="row">
+  <% @related_items.each do |item| %>
+    <% if (@food_item.cuisine == item.cuisine) && (@food_item.id != item.id) %>
+      <div class="col-sm-3" style="max-height: 80rem;">
+        <img class="card-img-top img-fluid rounded" style="max-height: 40rem;" src= <%= item.image_url_or_default %> alt="Food image">
+        <div class="card-block">
+          <h4 class="card-title" ><%= link_to "#{item.name}", "#{item.id}" %></h4>
+          <p class="card-text limittext" style="height: 3rem;"><%= item.description %></p>
+          <h3 class="card-title" style="color: rgb(176,43,44);"><%=  number_to_currency(item.price, locale: :vn) %> </h3>
+          <p><%= link_to "Add to order", new_food_item_order_path(food_item_id: item.id), class: "btn btn-primary" %></p>
+        </div>
+      </div>
+      <% @count += 1 %>
+    <% end %>
+    <% if @count == 4 %>
+      <% break %>
+    <% end %>
+  <% end %>
+</div>

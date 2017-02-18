@@ -10,6 +10,9 @@ class FoodItemsController < ApplicationController
   # GET /food_items/1
   # GET /food_items/1.json
   def show
+    @related_items = FoodItem.all
+    @related_items = @related_items.shuffle
+    @count = 0
   end
 
   # GET /food_items/new
@@ -69,6 +72,6 @@ class FoodItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_item_params
-      params.require(:food_item).permit(:name, :description, :price, :section_id, :image_url)
+      params.require(:food_item).permit(:name, :description, :price, :section_id, :image_url, :cuisine)
     end
 end
