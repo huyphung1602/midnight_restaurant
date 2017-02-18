@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1> All Orders (for admin only)</h1>
+<h1 style="color: rgb(176,43,44)"><strong>All Orders (for admin only)</strong></h1>
+<br>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-inverse">
     <tr>
-      <th>Food name</th>
+      <th>Food Name</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
       <th>Quantity</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -15,6 +19,9 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.food_item.name %></td>
+        <td><%= order.name %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.address %></td>
         <td><%= order.quantity %></td>
         <td><%= link_to 'Destroy', "/food_items/#{order.food_item_id}/orders/#{order.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

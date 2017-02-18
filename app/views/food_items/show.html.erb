@@ -1,6 +1,6 @@
-<h1>Detail Product</h1><br>
+<h1 style="color: rgb(176,43,44)"  align="center"><strong>Detail</strong></h1><br>
 
-<div class="card card-outline-warning">
+<div class="card card-outline-danger">
   <div class="card-block">
     <div class="row">
 
@@ -22,7 +22,7 @@
 </div>
 <br><br>
 
-<h1>Related Product</h1><br>
+<h1 style="color: rgb(176,43,44)"><strong>Related Dishes</strong></h1><br>
 <div class="row">
   <% @related_items.each do |item| %>
     <% if (@food_item.cuisine == item.cuisine) && (@food_item.id != item.id) %>

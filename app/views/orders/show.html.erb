@@ -1,19 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Thank you for your order</h1>
+<h1 style="color: rgb(176,43,44)"><strong>Thank you for your order</strong></h1>
+<br>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-inverse">
     <tr>
-      <th>Food name</th>
+      <th>Food Name</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Address</th>
       <th>Quantity</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <tr>
       <td><%= @order.food_item.name %></td>
