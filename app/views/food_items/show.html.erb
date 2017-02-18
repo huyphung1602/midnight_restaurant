@@ -11,7 +11,7 @@
       </div>
 
       <div class="col-sm-7" style="max-height: 120rem;">
-        <h2><%= @food_item.name %></h2><br>
+        <h2 style="color: rgb(176,43,44)"><strong><%= @food_item.name %></strong></h2><br>
         <p style="height: 8rem;" align="justify"><font size="4"><%= @food_item.description %></font></p>
         <p style="color: rgb(176,43,44);"><strong><font size="5"><%= number_to_currency(@food_item.price, locale: :vn) %></font></strong></p>
         <p style="color: rgb(255,140,0);"><font size="4"><%= @food_item.section %>, <%= @food_item.cuisine %></font></p>
