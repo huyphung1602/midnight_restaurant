@@ -50,7 +50,7 @@
       <% if (item.cuisine == params[:sort_cuisine]) || (@is_sorting == 0) %>
 
         <div class="col-sm-3" style="max-height: 80rem;">
-          <img class="card-img-top img-fluid rounded" style="max-height: 40rem;" src= <%= item.image_url_or_default %> alt="Food image">
+          <img class="card-img-top img-fluid rounded" style="max-height: 30rem;" src= <%= item.image_url_or_default %> alt="Food image">
 
           <div class="card-block">
             <h4 class="card-title" ><%= link_to "#{item.name}", "food_items/#{item.id}" %></h4>
