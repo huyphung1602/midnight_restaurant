@@ -8,7 +8,7 @@ class FoodItem < ApplicationRecord
   end
 
   def self.search(search)
-    where("name || description ILIKE ?", "%#{search}%")
+    where("name || cuisine ILIKE ?", "%#{search}%")
   end
 
 end

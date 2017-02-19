@@ -31,7 +31,8 @@
 
         <%= select_tag :sort_cuisine, options_for_select(
             [['Vietnamese', 'Vietnamese Food'],
-             ['Chinese', 'Chinese Food']]
+             ['Chinese', 'Chinese Food'],
+             ['Western', 'Western Food']]
         ), class: 'form-control' %>
 
         <%= submit_tag "Sort" , class: 'btn btn-success'%>
