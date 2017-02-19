@@ -1,5 +1,7 @@
-<h1>New Food Item</h1>
+<h1 style="color: rgb(176,43,44)"><strong>New Food Item (Admin only)</strong></h1>
+<br>
 
 <%= render 'form', food_item: @food_item %>
 
-<%= link_to 'Back', food_items_path %>
+<%= link_to 'Back', food_items_path, class: 'btn btn-warning'%>
+<br><br>

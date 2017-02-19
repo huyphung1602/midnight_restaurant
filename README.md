@@ -54,6 +54,7 @@ The following **additional** features are implemented:
 * [x] In the detail food view, I add the related dishes with the same Cuisine
 * [x] Add a routes for /all_orders to let the Admin know all the orders from the customer
 * [x] Show the warning if the search results is empty
+* [x] Made Food items index page, New food item, Edit food item become beautiful to support the Admin
 
 The following **known issues**:
 

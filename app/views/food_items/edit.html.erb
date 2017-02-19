@@ -1,6 +1,8 @@
-<h1>Editing Food Item</h1>
+<h1 style="color: rgb(176,43,44)"><strong>Edit Food Item (Admin only)</strong></h1>
+<br>
 
 <%= render 'form', food_item: @food_item %>
 
-<%= link_to 'Show', @food_item %> |
-<%= link_to 'Back', food_items_path %>
+<%= link_to 'Show', @food_item, class: 'btn btn-success' %>
+<%= link_to 'Back', food_items_path, class: 'btn btn-warning' %>
+<br><br>
