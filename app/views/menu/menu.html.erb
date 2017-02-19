@@ -44,7 +44,7 @@
 
 <br>
 
-<% if @current_section %>
+<% if @current_section || params[:search] %>
   <div class="row">
     <% @food_items.each do |item| %>
       <% if (item.cuisine == params[:sort_cuisine]) || (@is_sorting == 0) %>
@@ -67,4 +67,8 @@
 
 <% else %>
   <div class="alert alert-info">Please select a section</div>
+<% end %>
+
+<% if @nothing_matched %>
+  <div class="alert alert-warning">Sorry, but nothing matched your search criteria. Please try again with different keywords</div>
 <% end %>

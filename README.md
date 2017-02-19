@@ -29,7 +29,7 @@ URL: **https://midnightrestaurant.herokuapp.com/**
   * Image URL - do a google search or use LoremFlickr: http://loremflickr.com/320/240/canhchua
 * [x] User should be able to filter by section of Breakfast, Lunch, Dinner, or Drinks and see only the relevant items.
 * [x] User can sort menu items by “alphabetical”, “price low to high”, and “price high to low”.
-* [ ] User should be able to search for a menu item and see results.
+* [x] User should be able to search for a menu item and see results.
 * [x] Clicking on an item in the menu brings up its detail, where you see the description and a larger picture.
 * [x] User can click “order” on a menu item to go to a “Create Order” page.
 * [x] User is able to fill in their name, phone number, and address.
@@ -52,7 +52,8 @@ The following **additional** features are implemented:
 * [x] Beautiful About Us page with description, picture and icons
 * [x] Very nice layout for menu
 * [x] In the detail food view, I add the related dishes with the same Cuisine
-* [x] Add a routes for /all_orders to let the Admin know all the orders from the customer 
+* [x] Add a routes for /all_orders to let the Admin know all the orders from the customer
+* [x] Show the warning if the search results is empty
 
 The following **known issues**:
 

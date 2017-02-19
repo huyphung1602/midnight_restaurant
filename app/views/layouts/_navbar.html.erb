@@ -11,10 +11,15 @@
       <ul class="navbar-nav mr-auto">
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+
+      <% if @search_bar.present? %>
+        <form class="form-inline float-xs-right">
+            <%= form_tag(menu_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Dishes", class: 'form-control' %>
+            <%= submit_tag "Search", class: 'btn btn-outline-success' %>
+            <% end %>
+        </form>
+      <% end %>
 
     </div>
 
