@@ -55,6 +55,7 @@ The following **additional** features are implemented:
 * [x] Add a routes for /all_orders to let the Admin know all the orders from the customer
 * [x] Show the warning if the search results is empty
 * [x] Made Food items index page, New food item, Edit food item become beautiful to support the Admin
+* [x] Support search Cuisine - Help customer to see all the dishes and drinks of that Cuisine
 
 The following **known issues**:
 
@@ -64,7 +65,7 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](http://i.imgur.com/YUYnFIq.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -74,7 +75,10 @@ rails db:seed
 
 rails g migration AddInfoTo
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app:
+- Layout the apps is very hard.
+- Cannot do multiple orders yet.
+- I am going to add Comment, Rating, Views into the web
 
 ## License
 
