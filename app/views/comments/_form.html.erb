@@ -1,0 +1,33 @@
+<%= form_for([@food_item, @food_item.comments.build]) do |f| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div id='user_star'></div><br>
+      <p>
+        <%= f.text_field :name, placeholder: "Your name", class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.text_area :body, placeholder: "Your review", rows: "5" , class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.submit 'Submit' , :class => 'btn btn-success' %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  $('.user_star').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+    
+  $('#user_star').raty({
+    path: '/assets',
+    scoreName: 'comment[rating]'
+  });
+</script>

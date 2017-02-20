@@ -13,6 +13,9 @@ class FoodItemsController < ApplicationController
     @related_items = FoodItem.all
     @related_items = @related_items.shuffle
     @count = 0
+
+    @comments = @food_item.comments.to_a
+    @food_rating = @comments.blank? ? 0 : @food_item.comments.average(:rating).floor
   end
 
   # GET /food_items/new
