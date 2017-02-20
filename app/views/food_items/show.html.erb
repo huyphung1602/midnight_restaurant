@@ -1,6 +1,6 @@
 <% if notice == 'Comment was successfully posted.' %>
   <p class="alert alert-success" role="alert" id="notice"><%= notice %></p>
-<% else %>
+<% elsif notice != nil %>
   <p class="alert alert-danger" role="alert" id="notice"><%= notice %></p>
 <% end %>
 
